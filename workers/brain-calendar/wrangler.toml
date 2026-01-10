@@ -1,0 +1,19 @@
+name = "brain-calendar"
+main = "src/index.ts"
+compatibility_date = "2025-12-01"
+
+[vars]
+CONVEX_HTTP_BASE = "https://YOUR_CONVEX_DEPLOYMENT_URL"
+BRAIN_APPROVAL_TOKEN_SECRET = "change-me"
+GOOGLE_REDIRECT_URI = "https://brain-calendar.YOUR_SUBDOMAIN.workers.dev/oauth/google/callback"
+
+# Secrets (set via wrangler secret put):
+# GOOGLE_CLIENT_ID
+# GOOGLE_CLIENT_SECRET
+
+[[kv_namespaces]]
+binding = "OAUTH_TOKENS"
+id = "YOUR_KV_NAMESPACE_ID"
+
+[triggers]
+crons = ["*/10 * * * *"]

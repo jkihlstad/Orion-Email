@@ -1,0 +1,20 @@
+Add these keys to Info.plist for EventKit access:
+
+NSCalendarsUsageDescription = "Orion needs access to your calendar to provide AI-powered scheduling and help you manage your time effectively."
+
+NSCalendarsFullAccessUsageDescription = "Orion needs full access to your calendar to read events and suggest optimal meeting times."
+
+NSCalendarsWriteOnlyAccessUsageDescription = "Orion needs write access to add AI-scheduled events to your calendar."
+
+For Google OAuth, add URL scheme to Info.plist:
+<key>CFBundleURLTypes</key>
+<array>
+    <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+            <string>orion-calendar</string>
+        </array>
+        <key>CFBundleURLName</key>
+        <string>com.orion.calendar.oauth</string>
+    </dict>
+</array>

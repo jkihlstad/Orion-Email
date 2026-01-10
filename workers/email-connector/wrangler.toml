@@ -1,0 +1,18 @@
+name = "email-connector"
+main = "src/index.ts"
+compatibility_date = "2024-05-01"
+
+[triggers]
+# Run every 5 minutes to sync emails
+crons = ["*/5 * * * *"]
+
+[vars]
+# Non-secret environment variables
+# CONVEX_URL = "https://your-convex-deployment.convex.cloud"
+
+# Secrets (set via `wrangler secret put`)
+# CONVEX_DEPLOY_KEY
+# GOOGLE_CLIENT_ID
+# GOOGLE_CLIENT_SECRET
+# OUTLOOK_CLIENT_ID
+# OUTLOOK_CLIENT_SECRET
