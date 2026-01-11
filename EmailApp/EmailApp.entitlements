@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- Push Notifications -->
+	<key>aps-environment</key>
+	<string>development</string>
+
+	<!-- App Groups -->
+	<key>com.apple.security.application-groups</key>
+	<array>
+		<string>group.com.orion.shared</string>
+		<string>group.com.orion.email</string>
+	</array>
+
+	<!-- Associated Domains -->
+	<key>com.apple.developer.associated-domains</key>
+	<array>
+		<string>applinks:orionsuite.app</string>
+		<string>webcredentials:orionsuite.app</string>
+		<string>applinks:*.orionsuite.app</string>
+		<string>applinks:mail.orionsuite.app</string>
+	</array>
+
+	<!-- Sign in with Apple -->
+	<key>com.apple.developer.applesignin</key>
+	<array>
+		<string>Default</string>
+	</array>
+
+	<!-- AutoFill Credential Provider -->
+	<key>com.apple.developer.authentication-services.autofill-credential-provider</key>
+	<true/>
+
+	<!-- Keychain Sharing -->
+	<key>keychain-access-groups</key>
+	<array>
+		<string>$(AppIdentifierPrefix)com.orion.shared</string>
+	</array>
+
+	<!-- iCloud Services -->
+	<key>com.apple.developer.icloud-services</key>
+	<array>
+		<string>CloudKit</string>
+	</array>
+	<key>com.apple.developer.icloud-container-identifiers</key>
+	<array>
+		<string>iCloud.com.orion.email</string>
+	</array>
+
+	<!-- Siri Integration -->
+	<key>com.apple.developer.siri</key>
+	<true/>
+
+	<!-- Communication Notifications -->
+	<key>com.apple.developer.usernotifications.communication</key>
+	<true/>
+
+	<!-- Time Sensitive Notifications -->
+	<key>com.apple.developer.usernotifications.time-sensitive</key>
+	<true/>
+
+	<!-- App Attest -->
+	<key>com.apple.developer.devicecheck.appattest-environment</key>
+	<string>development</string>
+
+	<!-- Data Protection -->
+	<key>com.apple.developer.default-data-protection</key>
+	<string>NSFileProtectionComplete</string>
+
+	<!-- Increased Memory Limit -->
+	<key>com.apple.developer.kernel.increased-memory-limit</key>
+	<true/>
+
+	<!-- Extended Virtual Addressing -->
+	<key>com.apple.developer.kernel.extended-virtual-addressing</key>
+	<true/>
+
+	<!-- Default Messaging App (mailto:) -->
+	<key>com.apple.developer.messaging-app</key>
+	<true/>
+
+	<!-- Maps -->
+	<key>com.apple.developer.maps</key>
+	<true/>
+
+	<!-- Access WiFi Info -->
+	<key>com.apple.developer.networking.wifi-info</key>
+	<true/>
+</dict>
+</plist>

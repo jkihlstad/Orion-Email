@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>Orion Email</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -20,8 +22,53 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+
+	<!-- Privacy Usage Descriptions -->
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Orion Email needs microphone access for voice dictation when composing emails.</string>
+	<string>Orion Email needs microphone access for voice dictation when composing emails and voice commands.</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Orion Email uses speech recognition for voice-to-text email composition and AI transcription.</string>
+	<key>NSSiriUsageDescription</key>
+	<string>Orion Email uses Siri so you can send emails, read messages, and manage your inbox with voice commands.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Orion Email needs camera access to scan documents and capture images for email attachments.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Orion Email needs photo library access to attach images and documents to emails.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Orion Email needs permission to save email attachments to your photo library.</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Orion Email uses your contacts to suggest recipients and autofill email addresses.</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Orion Email can add calendar events from email invitations and schedule meetings.</string>
+	<key>NSRemindersUsageDescription</key>
+	<string>Orion Email can create reminders from emails and follow-up tasks.</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>Orion Email uses Face ID to protect sensitive emails and secure authentication.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Orion Email uses your location to add location context to emails and out-of-office replies.</string>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>Orion Email may use tracking to improve email suggestions and personalize your experience.</string>
+
+	<!-- Background Modes -->
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>processing</string>
+		<string>remote-notification</string>
+	</array>
+
+	<!-- Background Task Identifiers -->
+	<key>BGTaskSchedulerPermittedIdentifiers</key>
+	<array>
+		<string>com.orion.emailapp.refresh</string>
+		<string>com.orion.emailapp.sync</string>
+		<string>com.orion.emailapp.send</string>
+		<string>com.orion.emailapp.ai</string>
+	</array>
+
+	<!-- UI Configuration -->
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -39,16 +86,6 @@
 			</array>
 		</dict>
 	</dict>
-	<key>UIBackgroundModes</key>
-	<array>
-		<string>fetch</string>
-		<string>processing</string>
-	</array>
-	<key>BGTaskSchedulerPermittedIdentifiers</key>
-	<array>
-		<string>com.orion.emailapp.refresh</string>
-		<string>com.orion.emailapp.sync</string>
-	</array>
 	<key>UILaunchScreen</key>
 	<dict/>
 	<key>UISupportedInterfaceOrientations</key>
@@ -63,6 +100,76 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>Automatic</string>
+
+	<!-- URL Schemes -->
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.orion.email</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>mailto</string>
+				<string>orion-email</string>
+				<string>orion-mail</string>
+			</array>
+		</dict>
+	</array>
+
+	<!-- Queried URL Schemes -->
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>tel</string>
+		<string>sms</string>
+		<string>facetime</string>
+		<string>calshow</string>
+		<string>maps</string>
+	</array>
+
+	<!-- Intents - Siri Integration -->
+	<key>NSUserActivityTypes</key>
+	<array>
+		<string>INSendMessageIntent</string>
+		<string>INSearchForMessagesIntent</string>
+		<string>INSetMessageAttributeIntent</string>
+	</array>
+
+	<!-- Document Types -->
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>Email Message</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>public.email-message</string>
+				<string>com.apple.mail.email</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>PDF Document</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>com.adobe.pdf</string>
+			</array>
+		</dict>
+	</array>
+
+	<!-- App Transport Security -->
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<false/>
+	</dict>
+
+	<!-- Required Device Capabilities -->
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
 	</array>
 </dict>
 </plist>

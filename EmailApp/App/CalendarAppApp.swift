@@ -2,6 +2,9 @@ import SwiftUI
 
 @main
 struct CalendarAppApp: App {
+    // MARK: - AppDelegate Adapter for Push Notifications
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+
     private let auth = ClerkSessionProvider(devUserId: "user_123", role: "user")
     private let api: ConvexCalendarAPI
 
